@@ -1,0 +1,410 @@
+{
+	"info": {
+		"_postman_id": "271fd443-00b1-45c2-aa0a-bb5364b49ee6",
+		"name": "Airtribe - Backend Engineering",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12986719"
+	},
+	"item": [
+		{
+			"name": "Task Manager API",
+			"item": [
+				{
+					"name": "tasks",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Learn GraphQL\",\n    \"description\": \"Master the fundamentals of GQL from Apollo Odessy\",\n    \"isCompleted\": \"false\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/tasks",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"tasks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Learn GraphQL\",\n    \"description\": \"Master the fundamentals of GQL from Apollo Odessy\",\n    \"isCompleted\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/v1/tasks",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"tasks"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "168"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a8-atoC08N8yD0N0ZnjCKyVIXZOUw4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 21 Apr 2023 08:26:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"title\": \"Learn GraphQL\",\n        \"description\": \"Master the fundamentals of GQL from Apollo Odessy\",\n        \"isCompleted\": false,\n        \"id\": 2139\n    },\n    \"message\": \"Task created successfully\"\n}"
+						},
+						{
+							"name": "isComplete is not a boolean",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Learn GraphQL\",\n    \"description\": \"Master the fundamentals of GQL from Apollo Odessy\",\n    \"isCompleted\": \"false\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/v1/tasks",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"tasks"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"37-GLT/++nEDbvUI8iKRR1BhN19zwk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 21 Apr 2023 09:23:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Completion status should be boolean value\"\n}"
+						}
+					]
+				},
+				{
+					"name": "tasks",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \n\n    \"title\": \"Learn Node.js11\",\n    \"isComplete\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/tasks/1000",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"tasks",
+								"1000"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Task Update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \n    \"id\":100,\n\n    \"title\": \"Learn Node.js11\",\n    \"isComplete\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/v1/tasks/10000",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"tasks",
+										"10000"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "183"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b7-txu0EkmR4lHB3Au/FQn/Ty0Ex8U\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 21 Apr 2023 09:50:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1000,\n        \"title\": \"Learn Node.js11\",\n        \"description\": \"Learn how to use Node.js with Express, Sequelize, and PostgreSQL\",\n        \"isComplete\": true\n    },\n    \"message\": \"Task updated successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "tasks",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/tasks/1000",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"tasks",
+								"1000"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/tasks/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"tasks",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "All Tasks",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/tasks/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"tasks",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "290"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"122-DxxEQrf8yG/Bq9PUuFSD+Oa80y4\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Apr 2023 08:18:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 1000,\n            \"title\": \"Learn Node.js\",\n            \"description\": \"Learn how to use Node.js with Express, Sequelize, and PostgreSQL\",\n            \"isComplete\": false\n        },\n        {\n            \"id\": 1001,\n            \"title\": \"Learn React\",\n            \"description\": \"Learn how to use React with Redux\",\n            \"isComplete\": false\n        }\n    ],\n    \"message\": \"Successfully Tasks Retrieved\"\n}"
+				},
+				{
+					"name": "tasks/1000",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/tasks/1000",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"tasks",
+								"1000"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "185"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b9-+FfJndoCTaBQEG8IE+pfobfpTbo\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Apr 2023 08:19:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 1000,\n        \"title\": \"Learn Node.js\",\n        \"description\": \"Learn how to use Node.js with Express, Sequelize, and PostgreSQL\",\n        \"isComplete\": false\n    },\n    \"message\": \"Successfully Tasks Retrieved\"\n}"
+				}
+			]
+		}
+	]
+}
